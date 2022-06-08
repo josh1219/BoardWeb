@@ -15,14 +15,14 @@ public class LgTV implements TV {
 	}
 
 	@Override
-	public void volumeUp() {
-		System.out.println("LGTV -- 소리를 높인다.");
+	public void volumUp() {
+		System.out.println("LGTV -- 소리를 높인다");
 
 	}
 
 	@Override
-	public void volumeDown() {
-		System.out.println("LGTV -- 소리를 낮춘다.");
+	public void volumDown() {
+		System.out.println("LGTV -- 소리를 낮춘다. ");
 
 	}
 

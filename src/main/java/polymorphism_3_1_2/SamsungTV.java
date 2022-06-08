@@ -15,13 +15,13 @@ public class SamsungTV implements TV {
 	}
 
 	@Override
-	public void volumeUp() {
+	public void volumUp() {
 		System.out.println("ªÔº∫TV -- º“∏Æ∏¶ ≥Ù¿Œ¥Ÿ");
 
 	}
 
 	@Override
-	public void volumeDown() {
+	public void volumDown() {
 		System.out.println("ªÔº∫TV -- º“∏Æ∏¶ ≥∑√·¥Ÿ");
 
 	}

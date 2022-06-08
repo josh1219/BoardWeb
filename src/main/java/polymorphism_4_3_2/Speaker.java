@@ -2,8 +2,8 @@ package polymorphism_4_3_2;
 
 public interface Speaker {
 
-	void volumeUp();
+	void volumUp();
 
-	void volumeDown();
+	void volumDown();
 
 }
