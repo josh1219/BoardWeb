@@ -37,7 +37,7 @@ public class UserServiceClient {
 		}
 		
 		//3-2.insert 메소드 호출  (수정사항) 
-		vo.setId("user10");
+		vo.setId("user14");
 		vo.setPassword("1234");
 		vo.setName("홍길동3");
 		vo.setRole("user");
