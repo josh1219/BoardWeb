@@ -14,9 +14,73 @@
  -->
 <context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
-<bean id = "log" class = "com.springbook.biz.common.AroundAdvice"></bean>
 
-<!-- AOP 설정  -->
+<!--  AroundAdvice2 : JoinPoint 와 바인드 변수 적용 -->
+<bean id = "log" class = "com.springbook.biz.common.AroundAdvice2"></bean>
+
+<!-- AOP 설정 -->
+<aop:config>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+ 
+ <aop:aspect ref= "log">
+ 	<aop:around pointcut-ref = "allPointcut" method="aroundLog"/>
+ </aop:aspect>
+
+</aop:config>
+ 
+
+
+
+
+
+<!--  AfterThrowingAdvice2 : JoinPoint 와 바인드 변수 적용
+<bean id = "log" class = "com.springbook.biz.common.AfterThrowingAdvice2"></bean>
+-->
+<!-- AOP 설정
+<aop:config>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+ 
+ <aop:aspect ref= "log">
+ 	<aop:after-throwing pointcut-ref = "allPointcut" method="exceptionLog" throwing = "exceptionObj"/>
+ </aop:aspect>
+
+</aop:config>
+ -->
+
+
+<!--  BeforeAdvice2 : JoinPoint 와 바인드 변수 적용
+<bean id = "log" class = "com.springbook.biz.common.AfterReturning2"></bean>
+-->
+
+<!-- AOP 설정
+<aop:config>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+ 
+ <aop:aspect ref= "log">
+ 	<aop:after-returning pointcut-ref = "allPointcut" method="afterReturningLog" returning = "returnObj"/>
+ </aop:aspect>
+
+</aop:config>
+-->
+
+
+<!-- AOP 설정
+<aop:config>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+ <aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+ 
+ <aop:aspect ref= "log">
+ 	<aop:before pointcut-ref = "allPointcut" method="aroundLog"/>
+ 
+ </aop:aspect>
+
+</aop:config>
+-->
+
+<!-- AOP 설정 
 <aop:config>
  <aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
  <aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
@@ -27,6 +91,7 @@
  </aop:aspect>
 
 </aop:config>
+-->
 
 
 
